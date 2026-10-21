@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4etw4024jnr1"]
+[gd_scene format=3 uid="uid://d4etw4024jnr1"]
 
-[ext_resource type="Script" path="res://jugador.gd" id="1_dwxad"]
+[ext_resource type="Script" uid="uid://c37c5cggvjogm" path="res://jugador.gd" id="1_dwxad"]
 [ext_resource type="Texture2D" uid="uid://c30qdn4f6gmje" path="res://sprites/yellowbird-downflap.png" id="1_px5r7"]
 [ext_resource type="Texture2D" uid="uid://boxw35u08g62a" path="res://sprites/yellowbird-midflap.png" id="2_y8dkc"]
 [ext_resource type="Texture2D" uid="uid://cum8ck1hn8hp1" path="res://sprites/yellowbird-upflap.png" id="3_mjsbm"]
@@ -26,26 +26,28 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_y8dkc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Jugador" type="CharacterBody2D"]
+[node name="Jugador" type="CharacterBody2D" unique_id=1527651410]
 script = ExtResource("1_dwxad")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1167864375]
 shape = SubResource("CircleShape2D_uhi64")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1467990665]
+modulate = Color(0.7962325, 0.29213476, 0.4915793, 1)
+self_modulate = Color(0.82759225, 0.95985836, 0.8680926, 1)
 sprite_frames = SubResource("SpriteFrames_gv4n7")
 autoplay = "default"
 
-[node name="flap" type="AudioStreamPlayer" parent="."]
+[node name="flap" type="AudioStreamPlayer" parent="." unique_id=52132462]
 stream = ExtResource("5_yrhq3")
 
-[node name="score" type="AudioStreamPlayer" parent="."]
+[node name="score" type="AudioStreamPlayer" parent="." unique_id=125631734]
 stream = ExtResource("6_svnxt")
 
-[node name="lose" type="AudioStreamPlayer" parent="."]
+[node name="lose" type="AudioStreamPlayer" parent="." unique_id=3043024]
 stream = ExtResource("7_fo5xo")
